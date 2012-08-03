@@ -1,2 +1,9 @@
-class Product < ActiveRecord::Base
+class Product < ActiveRecord::Base 
+  validates :title, :description, :image_url, :presence => true  
+  validates_numericality_of :price, :with =>{:greater_than_or_equal_to => 0.01 }, :message => "cannot be missing or have abcs dungface!" 
+  validates :title, :uniqueness => true
+  validates :image_url, :format=> {
+    :with    => %r{\.(gif|jpg|png)$}i,
+    :message => 'must be a URL for GIF, JPG, or PNG image nimwit!'
+  }
 end
