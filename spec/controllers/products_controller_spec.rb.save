@@ -6,10 +6,10 @@ class ProductsControllerTest < ActionController::TestCase
     @update = {
       :title         => 'pickachu',
       :description   => 'warm and yellow',
-      :image_url     => 'lorem.jpg',
+      :image_url     => 'lorem.jpeg",
       :price         =>  2.99
     }
-  end 
+  end
 
   test "should get index" do
     get :index
@@ -22,14 +22,7 @@ class ProductsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create product" do
-    assert_difference('Product.count') do
-      post :create, :product => @update
-    end
-
-    assert_redirected_to product_path(assigns(:product))
-  end
-
+  
   test "should show product" do
     get :show, :id => @product.to_param
     assert_response :success
@@ -44,7 +37,31 @@ class ProductsControllerTest < ActionController::TestCase
     put :update, :id => @product.to_param, :product => @update
     assert_redirected_to product_path(assigns(:product))
   end
+  
+ # test "should destroy product" do
+  #  assert_difference('Product.count', -1) do
+   #   delete :destroy, :id => @product.to_param
+   # end
+
+   # assert_redirected_to products_path
+ # end
+
+  it "should  destroy a product" do
+        lambda do
+          delete :destroy, :id => @product.tp_param
+        end.should not change(Products, :count).by(1)
+  end
+
+
+
 end
 
 
 
+ 
+
+
+
+
+
+  
