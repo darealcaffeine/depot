@@ -111,3 +111,45 @@
   margin-right: 2em;
 }
 
+/* Styles for main page */
+
+#banner {
+  background: #44a;
+  padding-top: 10 px;
+  padding-bottom: 15px;
+  border-bottome: 2px solid;
+  font: small-caps 90px/90px "Times New Roman", serif;
+  color: #white;
+  text-align: center;
+}
+
+#banner img {
+  float: left;
+}
+
+#columns {
+  background: #44a;
+  float: left;
+}
+
+#main {
+  margin-left: 13em;
+  padding-top: 4ex;
+  padding-left: 2em;
+  background: white;
+}
+
+#side {
+  float: left;
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-bottom: 1em;
+  width: 12em;
+  background: #44a;
+}
+
+#side a {
+  color:#white
+  font-size: small;
+
+}

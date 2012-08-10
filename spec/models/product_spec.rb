@@ -27,15 +27,17 @@ fixtures :products
     assert product.invalid?  
 #    assert equal  "cannot be missing or have abcs dungface!",
     assert equal "must be greater or equal to 0.01"
-   
-   #  response.should have_selector("h2", :content => "cannot be missing or have abcs dungface!")
+  #  assert_select 'h2', 'cannot be missing or have abcs dungface!'
+   # should have_content("cannot be missing or have abcs dungface!")
  
       product.errors[:price].join('; ')
+#      product.errors[:price].should have_content("cannot be missing or have abcs dungface!")
+
 
     product.price = 0
     assert product.invalid? 
 #    assert_equal "cannot be missing or have abcs dungface!",
-      assert equal "must be greater or equal to 0.01" 
+    assert equal "must be greater or equal to 0.01" 
         product.errors[:price].join('; ')
 
     product.price = 1

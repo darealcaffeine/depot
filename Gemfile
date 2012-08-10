@@ -38,6 +38,7 @@ gem 'sqlite3'
     gem 'webrat','0.7.1'
     gem 'spork'
     gem 'factory_girl_rails','1.0'
+    gem 'guard-rspec'
   end
 
 
